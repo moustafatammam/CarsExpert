@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.tammam.carsexpert.data.model.Car" />
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:clipToPadding="false"
+    android:foreground="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/car_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:src="@{model.imageUrl}"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/car_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:text="@{model.brand}"
+        app:layout_constraintStart_toEndOf="@+id/car_image"
+        app:layout_constraintTop_toTopOf="@id/car_image"
+        />
+
+    <TextView
+        android:id="@+id/car_construction_year"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="14sp"
+        android:text="@{model.constractionYear}"
+        app:layout_constraintTop_toBottomOf="@id/car_status"
+        app:layout_constraintStart_toStartOf="@id/car_brand" />
+
+    <TextView
+        android:id="@+id/car_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:textSize="12sp"
+        android:text="@{model.isUsed ? @string/used : @string/new_car}"
+        app:layout_constraintTop_toBottomOf="@id/car_brand"
+        app:layout_constraintStart_toStartOf="@id/car_brand"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
