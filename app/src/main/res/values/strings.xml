@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CarsExpert</string>
+    <string name="used">Used</string>
+    <string name="new_car">New</string>
+
+
 </resources>
